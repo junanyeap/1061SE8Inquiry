@@ -149,7 +149,7 @@
         $id = (int)$id;
         // 刪除這一筆id的所有資料
         $sql = "DELETE FROM `library` WHERE `id` = $id;";
-        // 執行SQL四大會計師款到發貨經典款的痕跡
+        // 執行SQL
         return mysqli_query($conn, $sql);
     }
 ?>
