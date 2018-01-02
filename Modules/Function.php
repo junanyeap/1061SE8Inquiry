@@ -1,6 +1,6 @@
 <?php
     // 將MySQL連線資訊從dbConnect.php載入
-    require_once('dbConnect.php');
+    require_once('dbconnect.php');
 
 /* READ */
     /* 獲取全部生態資料庫資訊 */
