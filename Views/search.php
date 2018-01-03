@@ -5,6 +5,7 @@
     exit(0);
   }
   require("../Modules/Function.php");
+  error_reporting(0);
 ?>
 
 <head>
@@ -62,7 +63,6 @@
       </div>
       <div class="col-md-8">
         <?php
-        
         $keyword = $_REQUEST['keyword'];
         $label = $_REQUEST['label'];
         $family = $_REQUEST['family'];
@@ -71,8 +71,10 @@
         while($rs=mysqli_fetch_array($results)) {
           echo "<div class='card card-inline'>
                   <img class='card-img-top' src='http://placehold.it/300x300'>
-                  <div class='card-footer text-center' type='button' style='font-size:25px;font-weight:bold;background-color:#b8d199'>"
+                  <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
+                  <a href='search.php' class='btn btn-lg' style='color:black;font-weight:bold';>"
                     ,$rs['organismname'],"
+                    </a>
                   </div>
                 </div>";
           
