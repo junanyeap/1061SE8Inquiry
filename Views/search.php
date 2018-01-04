@@ -33,7 +33,7 @@
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
             <table class="table" >
               <tr><th style="text-align:center", colspan="4">查詢</th></tr>
-              
+
               <tr>
               <td style="text-align:center">關鍵字</td>
               <td style="text-align:left"><input type="text" name="keyword" placeholder="ex.請輸入關鍵字"/></td>
@@ -56,13 +56,14 @@
               <td style="text-align:left"><input type="text" name="genus" placeholder="ex.屬"/></td>
               </tr>
               <tr><th style="text-align:center", colspan="4"><input class="btn-lg" type="submit" value="確認" /></tr>
-            
+
             </table>
           </div>
         </div>
       </div>
       <div class="col-md-8">
         <?php
+        
         $keyword = $_REQUEST['keyword'];
         $label = $_REQUEST['label'];
         $family = $_REQUEST['family'];
@@ -77,12 +78,12 @@
                     </a>
                   </div>
                 </div>";
-          
+
         }
         ?>
       </div>
     </div>
-    
+
 
   <!-- </ div> -->
 </body>
