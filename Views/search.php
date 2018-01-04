@@ -6,6 +6,10 @@
   }
   require("../Modules/Function.php");
   error_reporting(0);
+  // $_SESSION["last_label"] = $label = $_REQUEST['label'];
+  // $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+  // $_SESSION["last_family"] = $family = $_REQUEST['family'];
+  // $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
 ?>
 
 <head>
@@ -56,10 +60,13 @@
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
             <table class="table" >
               <tr><th style="text-align:center", colspan="4">查詢</th></tr>
-              
+              <?php
+              // $getFamily="SELECT DISTINCT family from library";
+              // $getFamilyResult=mysql_query($getFamily);
+              echo '
               <tr>
               <td style="text-align:center">關鍵字</td>
-              <td style="text-align:left"><input type="text" name="keyword" placeholder="ex.請輸入關鍵字"/></td>
+              <td style="text-align:left"><input type="text" name="keyword" /></td>
               </tr>
               <tr>
               <td style="text-align:center">物種</td>
@@ -72,23 +79,48 @@
               </tr>
               <tr>
               <td style="text-align:center">科別</td>
-              <td style="text-align:left"><input type="text" name="family" placeholder="ex.科別"/></td>
+              <td style="text-align:left"><input type="text" name="family" ></td>
               </tr>
               <tr>
               <td style="text-align:center">屬</td>
-              <td style="text-align:left"><input type="text" name="genus" placeholder="ex.屬"/></td>
+              <td style="text-align:left"><input type="text" name="genus" /></td>
               </tr>
-              <tr><th style="text-align:center", colspan="4"><input class="btn-lg" type="submit" value="確認" /></tr>
-            
+              ';
+              ?>
+              <tr><th style="text-align:center", colspan="4">
+                <input class="btn-lg" type="submit" value="確認" />
+              </tr>
             </table>
-            <!-- <div type="button">
-             <a class="btn-lg" href="SearchResult.php">show</a>
-           </div> -->
+          </form>
           </div>
         </div>
       </div>
+      <div class="col-md-8">
+        <?php
+
+        $_SESSION["last_label"] = $label = $_REQUEST['label'];
+        $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+        $_SESSION["last_family"] = $family = $_REQUEST['family'];
+        $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
+        // print($_SESSION["last_key"]);
+        $results=searchEcology($keyword,$label,$family,$genus);
+        while($rs=mysqli_fetch_array($results)) {
+          echo "<div class='card card-inline'>
+                  <img class='card-img-top' src='http://placehold.it/300x300'>
+                  <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
+                  <a href='../Control/Control.php?act=getDetail&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
+                  // <a href='../Control/Control.php?act=deleteEcology&id=".$row['id']."'>delete</a>
+                    ,$rs['organismname'],"
+                    </a>
+                  </div>
+                </div>";
+        }
+        ?>
+      </div>
     </div>
-    
+    <div>
+    </div>
+
 
   <!-- </ div> -->
 </body>

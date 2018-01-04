@@ -1,9 +1,15 @@
 <?php
     // 將MySQL連線資訊從dbConnect.php載入
-    require_once('dbConnect.php');
+    require_once('dbconnect.php');
 
 /* READ */
     /* 獲取全部生態資料庫資訊 */
+    function getDetail($id){
+      global $conn;
+      $id = (int)$id;
+      $sql = "SELECT * from 'library' where id=$id";
+      return mysqli_query($conn,$sql);
+    }
     function getFullList() {
         // 宣告使用conn全域變數
         global $conn;

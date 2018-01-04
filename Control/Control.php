@@ -4,6 +4,12 @@
     $action =$_REQUEST['act'];
 
     switch ($action) {
+        case 'getDetail':
+            $id = (int)$_REQUEST['id'];
+            if ($id > 0) {
+                getDetail($id);
+            }
+            break;
         case 'searchEcology':
             searchEcology($_REQUEST['keyword'], $_REQUEST['label'], $_REQUEST['family'], $_REQUEST['genus']);
             header('Location: ../Views/Result.php');

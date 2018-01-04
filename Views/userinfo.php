@@ -10,7 +10,7 @@
   <?php
     $results=getUserList();
     while (	$rs=mysqli_fetch_array($results)) {
-      echo 
+      echo
       "<br/><b>id:</b>",$rs['id'],
       "<br/><b>name:</b>",$rs['username'],
       "<br/><b>password:</b>",$rs['password'],
@@ -19,6 +19,14 @@
       "&nbsp;&nbsp;&nbsp;<a href='../Views/userinfo_add.php?'>add</a>",
       "<br/>";
     }
+    // $sql = "SELECT DISTINCT family FROM library";
+    // $result = mysqli_query($conn,$sql);
+    //
+    // echo "<select name='family'>";
+    // while ($row = mysqli_fetch_array($result)) {
+    //   echo "<option value='" . $row['family'] . "'>" . $row['family'] . "</option>";
+    // }
+    // echo "</select>";gfhhgfhgfhgfhgfhfghfhgfhgf
   ?>
 </div>
 <?php
