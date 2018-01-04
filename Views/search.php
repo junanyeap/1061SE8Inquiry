@@ -6,10 +6,10 @@
   }
   require("../Modules/Function.php");
   error_reporting(0);
-  $_SESSION["last_label"] = $label = $_REQUEST['label'];
-  $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
-  $_SESSION["last_family"] = $family = $_REQUEST['family'];
-  $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
+  // $_SESSION["last_label"] = $label = $_REQUEST['label'];
+  // $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+  // $_SESSION["last_family"] = $family = $_REQUEST['family'];
+  // $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
 ?>
 
 <head>
@@ -43,7 +43,7 @@
               echo '
               <tr>
               <td style="text-align:center">關鍵字</td>
-              <td style="text-align:left"><input type="text" name="keyword" value="'. $_SESSION["last_key"] .'"/></td>
+              <td style="text-align:left"><input type="text" name="keyword" /></td>
               </tr>
               <tr>
               <td style="text-align:center">物種</td>
@@ -56,17 +56,16 @@
               </tr>
               <tr>
               <td style="text-align:center">科別</td>
-              <td style="text-align:left"><input type="text" name="family" value="'. $_SESSION["last_family"] .'"></td>
+              <td style="text-align:left"><input type="text" name="family" ></td>
               </tr>
               <tr>
               <td style="text-align:center">屬</td>
-              <td style="text-align:left"><input type="text" name="genus" value="'. $_SESSION["last_genus"] .'"/></td>
+              <td style="text-align:left"><input type="text" name="genus" /></td>
               </tr>
               ';
               ?>
               <tr><th style="text-align:center", colspan="4">
                 <input class="btn-lg" type="submit" value="確認" />
-                <input class="btn-lg" type="reset" value="CLEAR" />
               </tr>
             </table>
           </form>
@@ -94,6 +93,8 @@
         }
         ?>
       </div>
+    </div>
+    <div>
     </div>
 
 
