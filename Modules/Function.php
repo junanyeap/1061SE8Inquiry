@@ -4,6 +4,12 @@
 
 /* READ */
     /* 獲取全部生態資料庫資訊 */
+    function getDetail($id){
+      global $conn;
+      $id = (int)$id;
+      $sql = "SELECT * from 'library' where id=$id";
+      return mysqli_query($conn,$sql);
+    }
     function getFullList() {
         // 宣告使用conn全域變數
         global $conn;
