@@ -1,0 +1,7 @@
+diff a/Views/index.php b/Views/index.php	(rejected hunks)
+@@ -11,4 +11,5 @@
+ </div>
+ <?php
+   include 'footer.php';
++  
+ ?>
