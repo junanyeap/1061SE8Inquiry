@@ -6,6 +6,10 @@
   }
   require("../Modules/Function.php");
   error_reporting(0);
+  $_SESSION["last_label"] = $label = $_REQUEST['label'];
+  $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+  $_SESSION["last_family"] = $family = $_REQUEST['family'];
+  $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
 ?>
 
 <head>
@@ -34,10 +38,12 @@
             <table class="table" >
               <tr><th style="text-align:center", colspan="4">查詢</th></tr>
               <?php
+              // $getFamily="SELECT DISTINCT family from library";
+              // $getFamilyResult=mysql_query($getFamily);
               echo '
               <tr>
               <td style="text-align:center">關鍵字</td>
-              <td style="text-align:left"><input type="text" name="keyword" placeholder="'. $_SESSION["last_key"] .'"/></td>
+              <td style="text-align:left"><input type="text" name="keyword" value="'. $_SESSION["last_key"] .'"/></td>
               </tr>
               <tr>
               <td style="text-align:center">物種</td>
@@ -50,25 +56,28 @@
               </tr>
               <tr>
               <td style="text-align:center">科別</td>
-              <td style="text-align:left"><input type="text" name="family" placeholder="'. $_SESSION["last_family"] .'"></td>
+              <td style="text-align:left"><input type="text" name="family" value="'. $_SESSION["last_family"] .'"></td>
               </tr>
               <tr>
               <td style="text-align:center">屬</td>
-              <td style="text-align:left"><input type="text" name="genus" placeholder="'. $_SESSION["last_genus"] .'"/></td>
+              <td style="text-align:left"><input type="text" name="genus" value="'. $_SESSION["last_genus"] .'"/></td>
               </tr>
               ';
               ?>
-              <tr><th style="text-align:center", colspan="4"><input class="btn-lg" type="submit" value="確認" /></tr>
-
+              <tr><th style="text-align:center", colspan="4">
+                <input class="btn-lg" type="submit" value="確認" />
+                <input class="btn-lg" type="reset" value="CLEAR" />
+              </tr>
             </table>
+          </form>
           </div>
         </div>
       </div>
       <div class="col-md-8">
         <?php
 
-        $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
         $_SESSION["last_label"] = $label = $_REQUEST['label'];
+        $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
         $_SESSION["last_family"] = $family = $_REQUEST['family'];
         $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
         // print($_SESSION["last_key"]);
@@ -82,7 +91,6 @@
                     </a>
                   </div>
                 </div>";
-
         }
         ?>
       </div>
