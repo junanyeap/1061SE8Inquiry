@@ -33,10 +33,11 @@
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
             <table class="table" >
               <tr><th style="text-align:center", colspan="4">查詢</th></tr>
-
+              <?php
+              echo '
               <tr>
               <td style="text-align:center">關鍵字</td>
-              <td style="text-align:left"><input type="text" name="keyword" placeholder="ex.請輸入關鍵字"/></td>
+              <td style="text-align:left"><input type="text" name="keyword" placeholder="'. $_SESSION["last_key"] .'"/></td>
               </tr>
               <tr>
               <td style="text-align:center">物種</td>
@@ -49,12 +50,14 @@
               </tr>
               <tr>
               <td style="text-align:center">科別</td>
-              <td style="text-align:left"><input type="text" name="family" placeholder="ex.科別"/></td>
+              <td style="text-align:left"><input type="text" name="family" placeholder="'. $_SESSION["last_family"] .'"></td>
               </tr>
               <tr>
               <td style="text-align:center">屬</td>
-              <td style="text-align:left"><input type="text" name="genus" placeholder="ex.屬"/></td>
+              <td style="text-align:left"><input type="text" name="genus" placeholder="'. $_SESSION["last_genus"] .'"/></td>
               </tr>
+              ';
+              ?>
               <tr><th style="text-align:center", colspan="4"><input class="btn-lg" type="submit" value="確認" /></tr>
 
             </table>
@@ -63,11 +66,12 @@
       </div>
       <div class="col-md-8">
         <?php
-        
-        $keyword = $_REQUEST['keyword'];
-        $label = $_REQUEST['label'];
-        $family = $_REQUEST['family'];
-        $genus = $_REQUEST['genus'];
+
+        $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+        $_SESSION["last_label"] = $label = $_REQUEST['label'];
+        $_SESSION["last_family"] = $family = $_REQUEST['family'];
+        $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
+        // print($_SESSION["last_key"]);
         $results=searchEcology($keyword,$label,$family,$genus);
         while($rs=mysqli_fetch_array($results)) {
           echo "<div class='card card-inline'>
