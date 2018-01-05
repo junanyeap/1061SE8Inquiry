@@ -29,8 +29,31 @@
 <body >
   <!-- <div class="container col-md-12"> -->
     <div class="row ">
-      <div class="col-md-4">
-        <div class="sidebar-navbar-fixed affix" style="margin-left: 1.5%">
+      <div class="col-md-8">
+      
+        <?php
+        $keyword = $_REQUEST['keyword'];
+        $label = $_REQUEST['label'];
+        $family = $_REQUEST['family'];
+        $genus = $_REQUEST['genus'];
+        $results=searchEcology($keyword,$label,$family,$genus);
+        while($rs=mysqli_fetch_array($results)) {
+          echo "<div class='card card-inline col-md-4'>
+                  <div class='card-img-top' style='overflow:hidden;height:300px'> 
+                    <img src='http://placehold.it/300x300' style='width:100%'>
+                  </div>
+                  <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
+                  <a href='search.php' class='btn btn-lg' style='color:black;font-weight:bold';>"
+                    ,$rs['organismname'],"
+                    </a>
+                  </div>
+                </div>";
+          
+        }
+        ?>
+      </div>
+      <div class="col-md-3" >
+        <div class="sidebar-navbar-fixed pull-right affix ">
           <div class="well" style="background-color:#b8d199;font-weight:bold" >
             <link rel = "stylesheet" type = "text/css" href = "hk.css">
             <form action="search.php" method="post" style="font-size: 25px">

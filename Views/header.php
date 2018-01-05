@@ -18,7 +18,7 @@
         <li><a href="../Views/userinfo.php" style="color:white;font-weight:bold">使用者清單</a></li>
         <li><a href="../Views/SearchView.php" style="color:white;font-weight:bold">查看資料庫</a></li>
         <li><a href="../Views/SearchUI.php" style="color:white;font-weight:bold">查詢清單</a></li>
-        <li><a href="../Views/search.php?" style="color:white;font-weight:bold">我們的查詢</a></li>
+        <li><a href="../Views/search.php" style="color:white;font-weight:bold">我們的查詢</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href='loginForm.php' style="color:white;font-weight:bold">
