@@ -9,6 +9,7 @@
             if ($id > 0) {
                 getDetail($id);
             }
+            header('Location: ../Views/searchDetail.php');
             break;
         case 'searchEcology':
             searchEcology($_REQUEST['keyword'], $_REQUEST['label'], $_REQUEST['family'], $_REQUEST['genus']);

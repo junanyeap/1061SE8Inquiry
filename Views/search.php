@@ -85,7 +85,7 @@
           echo "<div class='card card-inline'>
                   <img class='card-img-top' src='http://placehold.it/300x300'>
                   <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
-                  <a href='../Control/Control.php?act=getDetail&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
+                  <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
                   // <a href='../Control/Control.php?act=deleteEcology&id=".$row['id']."'>delete</a>
                     ,$rs['organismname'],"
                     </a>
