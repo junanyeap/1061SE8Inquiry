@@ -59,6 +59,7 @@
             <table class="table" >
               <tr><th style="text-align:center", colspan="4">查詢</th></tr>
               <?php
+              
               // $getFamily="SELECT DISTINCT family from library";
               // $getFamilyResult=mysql_query($getFamily);
               echo '
@@ -75,15 +76,29 @@
               </select>
               </td>
               </tr>
-              <tr>
-              <td style="text-align:center">科別</td>
-              <td style="text-align:left"><input type="text" name="family" ></td>
-              </tr>
-              <tr>
-              <td style="text-align:center">屬</td>
-              <td style="text-align:left"><input type="text" name="genus" /></td>
-              </tr>
-              ';
+              <tr>';
+              $sql = "SELECT DISTINCT family FROM library";
+              $result = mysqli_query($conn,$sql);
+              echo '<td style="text-align:center">科別</td>
+              <td style="text-align:left">
+              <select name="family">';
+              echo '<option ></option>';
+              while ($row = mysqli_fetch_array($result)) {
+                echo '<option value="',$row["family"],'">',$row["family"],'</option>';
+              }
+              echo '
+              </select>
+              </td></tr>
+              <tr>';
+              $sql = "SELECT DISTINCT genus FROM library";
+              $result = mysqli_query($conn,$sql);
+              echo '<td style="text-align:center">屬性</td>
+              <td style="text-align:left">
+              <select name="genus">';
+              echo '<option></option>';
+              while ($row = mysqli_fetch_array($result)) {
+                echo '<option value="',$row["genus"],'">',$row["genus"],'</option>';
+              }
               ?>
               <tr><th style="text-align:center", colspan="4">
                 <input class="btn-lg" type="submit" value="確認" />
