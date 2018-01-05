@@ -28,30 +28,28 @@
 </head>
 <body >
   <!-- <div class="container col-md-12"> -->
-    <div class="row ">
-      <div class="col-md-8">
-      
-        <?php
-        $keyword = $_REQUEST['keyword'];
-        $label = $_REQUEST['label'];
-        $family = $_REQUEST['family'];
-        $genus = $_REQUEST['genus'];
-        $results=searchEcology($keyword,$label,$family,$genus);
-        while($rs=mysqli_fetch_array($results)) {
-          echo "<div class='card card-inline col-md-4'>
-                  <div class='card-img-top' style='overflow:hidden;height:300px'> 
-                    <img src='http://placehold.it/300x300' style='width:100%'>
-                  </div>
-                  <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
-                  <a href='search.php' class='btn btn-lg' style='color:black;font-weight:bold';>"
-                    ,$rs['organismname'],"
-                    </a>
-                  </div>
-                </div>";
-          
-        }
-        ?>
-      </div>
+  <div class="col-md-8">
+    <?php
+
+    $_SESSION["last_label"] = $label = $_REQUEST['label'];
+    $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
+    $_SESSION["last_family"] = $family = $_REQUEST['family'];
+    $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
+    // print($_SESSION["last_key"]);
+    $results=searchEcology($keyword,$label,$family,$genus);
+    while($rs=mysqli_fetch_array($results)) {
+      echo "<div class='card card-inline'>
+              <img class='card-img-top' src='http://placehold.it/300x300'>
+              <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
+              <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
+              // <a href='../Control/Control.php?act=deleteEcology&id=".$row['id']."'>delete</a>
+                ,$rs['organismname'],"
+                </a>
+              </div>
+            </div>";
+    }
+    ?>
+  </div>
       <div class="col-md-3" >
         <div class="sidebar-navbar-fixed pull-right affix ">
           <div class="well" style="background-color:#b8d199;font-weight:bold" >
@@ -95,28 +93,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <?php
 
-        $_SESSION["last_label"] = $label = $_REQUEST['label'];
-        $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
-        $_SESSION["last_family"] = $family = $_REQUEST['family'];
-        $_SESSION["last_genus"] = $genus = $_REQUEST['genus'];
-        // print($_SESSION["last_key"]);
-        $results=searchEcology($keyword,$label,$family,$genus);
-        while($rs=mysqli_fetch_array($results)) {
-          echo "<div class='card card-inline'>
-                  <img class='card-img-top' src='http://placehold.it/300x300'>
-                  <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
-                  <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
-                  // <a href='../Control/Control.php?act=deleteEcology&id=".$row['id']."'>delete</a>
-                    ,$rs['organismname'],"
-                    </a>
-                  </div>
-                </div>";
-        }
-        ?>
-      </div>
     </div>
     <div>
     </div>
