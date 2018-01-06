@@ -28,6 +28,7 @@
 </head>
 <body >
   <!-- <div class="container col-md-12"> -->
+    <div class="row">
   <div class="col-md-8">
     <?php
 
@@ -38,10 +39,12 @@
     // print($_SESSION["last_key"]);
     $results=searchEcology($keyword,$label,$family,$genus);
     while($rs=mysqli_fetch_array($results)) {
-      echo "<div class='card card-inline'>
-              <img class='card-img-top' src='http://placehold.it/300x300'>
+      echo "<div class='card card-inline col-md-3'>
+              <div style='overflow:hidden;height:70%'>
+              <img class='card-img-top' src='http://placehold.it/300x300' style='width:100%'>
+              </div>
               <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
-              <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold';>"
+              <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold;font-size:120%';>"
               // <a href='../Control/Control.php?act=deleteEcology&id=".$row['id']."'>delete</a>
                 ,$rs['organismname'],"
                 </a>
@@ -50,9 +53,9 @@
     }
     ?>
   </div>
-      <div class="col-md-3" >
+      <div class="col-md-4" >
         <div class="sidebar-navbar-fixed pull-right affix ">
-          <div class="well" style="background-color:#b8d199;font-weight:bold" >
+          <div class="well col-md-10" style="background-color:#b8d199;font-weight:bold" >
             <link rel = "stylesheet" type = "text/css" href = "hk.css">
             <form action="search.php" method="post" style="font-size: 25px">
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
@@ -64,11 +67,11 @@
               // $getFamilyResult=mysql_query($getFamily);
               echo '
               <tr>
-              <td style="text-align:center">關鍵字</td>
-              <td style="text-align:left"><input type="text" name="keyword" /></td>
+              <td class="col-md-4"style="text-align:center">關鍵字</td>
+              <td style="text-align:left"><input type="text" name="keyword" style="width:70%"/></td>
               </tr>
               <tr>
-              <td style="text-align:center">物種</td>
+              <td class="col-md-3"style="text-align:center">物種</td>
               <td style="text-align:left">
               <select name="label">
               <option value="frog" selected >青蛙</option>
@@ -79,7 +82,7 @@
               <tr>';
               $sql = "SELECT DISTINCT family FROM library";
               $result = mysqli_query($conn,$sql);
-              echo '<td style="text-align:center">科別</td>
+              echo '<td class="col-md-3" style="text-align:center">科別</td>
               <td style="text-align:left">
               <select name="family">';
               echo '<option ></option>';
@@ -92,7 +95,7 @@
               <tr>';
               $sql = "SELECT DISTINCT genus FROM library";
               $result = mysqli_query($conn,$sql);
-              echo '<td style="text-align:center">屬性</td>
+              echo '<td class="col-md-3" style="text-align:center">屬性</td>
               <td style="text-align:left">
               <select name="genus">';
               echo '<option></option>';
@@ -108,6 +111,7 @@
           </div>
         </div>
       </div>
+    </div>
 
     </div>
     <div>
