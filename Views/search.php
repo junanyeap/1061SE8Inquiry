@@ -60,7 +60,7 @@
       </div>
       <div class="col-md-4" >
         <div class="sidebar-navbar-fixed pull-right affix ">
-          <div class="well col-md-10" style="background-color:#b8d199;font-weight:bold" >
+          <div class="well col-md-12" style="background-color:#b8d199;font-weight:bold" >
             <link rel = "stylesheet" type = "text/css" href = "hk.css">
             <form action="search.php" method="post" style="font-size: 25px">
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
@@ -74,8 +74,9 @@
               <tr>
               <td class="col-md-3"style="text-align:center">物種</td>
               <td style="text-align:left">
-              <button class="btn-success" style="background-color:#7f9c5c"><a class="btn-md" href="../Views/search.php?label=frog" style="color:white;text-decoration: none;">青蛙</a></button>
-              <button class="btn-success"  style="background-color:#7f9c5c"><a class="btn-md" href="../Views/search.php?label=lepidoptera" style="color:white;text-decoration: none;">蝴蝶</a></button>
+              <a class="btn btn-md btn-success" href="../Views/search.php" style="background-color:#7f9c5c;color:white;text-decoration: none;font-size:80%;font-weight:bold">全部</a>
+              <a class="btn btn-md btn-success" href="../Views/search.php?label=frog" style="background-color:#7f9c5c;color:white;text-decoration: none;font-size:80%;font-weight:bold">青蛙</a>
+              <a class="btn btn-md btn-success" href="../Views/search.php?label=lepidoptera" style="background-color:#7f9c5c;color:white;text-decoration: none;font-size:80%;font-weight:bold">蝴蝶</a>
               <input type="hidden" name="label" value="',$label,'"></input>
               </td>
               </tr>

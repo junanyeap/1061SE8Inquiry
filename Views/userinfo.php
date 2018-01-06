@@ -19,14 +19,6 @@
       "&nbsp;&nbsp;&nbsp;<a href='../Views/userinfo_add.php?'>add</a>",
       "<br/>";
     }
-    $sql = "SELECT DISTINCT family FROM library";
-    $result = mysqli_query($conn,$sql);
-    
-    echo "<select name='family'>";
-    while ($row = mysqli_fetch_array($result)) {
-      echo "<option value='" . $row['family'] . "'>" . $row['family'] . "</option>";
-    }
-    echo "</select>";
   ?>
 </div>
 <?php
