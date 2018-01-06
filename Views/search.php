@@ -46,7 +46,7 @@
         while($rs=mysqli_fetch_array($results)) {
           echo "<div class='card card-inline col-md-3'>
                   <div style='overflow:hidden;height:70%'>
-                  <img class='card-img-top' src='../Views/crayon.png' style='width:100%'>
+                  <img class='card-img-top' src='../Views/frog.jpg' style='width:100%'>
                   </div>
                   <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
                   <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold;font-size:120%';>"
@@ -82,6 +82,10 @@
               </tr>
               <tr>
               <td class="col-md-4" style="text-align:center">關鍵字</td>
+              <td style="text-align:left"><input type="text" name="keyword" style="width:80%"/></td>
+              </tr>
+			  <tr>
+              <td class="col-md-4" style="text-align:center">颜色</td>
               <td style="text-align:left"><input type="text" name="keyword" style="width:80%"/></td>
               </tr>
               <tr>';

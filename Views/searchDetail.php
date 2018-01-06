@@ -61,6 +61,11 @@ if ($rs=mysqli_fetch_assoc($result)) {
         </table>
       </div>
     </div>
+	<div style='overflow:hidden;height:70%'>
+        <img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
+		<img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
+		<img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
+	</div>
     <row>
       
     </row>
