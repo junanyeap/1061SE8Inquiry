@@ -34,23 +34,23 @@
 		#select3 {
 			width: 350px;
 			height: 36px;
-		}		
+		}
 		#select4 {
 			width: 350px;
 			height: 36px;
-		}		
+		}
 		#select5 {
 			width: 350px;
 			height: 50px;
-		}		
+		}
 		#select6 {
 			width: 350px;
 			height: 36px;
-		}		
+		}
 		#select7 {
 			width: 350px;
 			height: 36px;
-		}		
+		}
 	</style>
 	<script src="../Views/js/jquery-1.11.0.min.js"></script>
 	<script src="../Views/js/fm.selectator.jquery.js"></script>
@@ -117,7 +117,7 @@
       </div>
     </form>
   </div>
-	
+
 
 </body>
 </html>

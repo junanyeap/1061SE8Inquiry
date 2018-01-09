@@ -1,6 +1,6 @@
 <?php
   error_reporting(0);
-  require_once('dbConnect.php');
+  require_once('dbconnect.php');
   function createPhotoExif($directory='',$path = '', $name = '', $longitude = NULL, $latitude = NULL,  $shootdatetime = NULL) //儲存資料到資料庫
   {
     // 宣告使用conn全域變數

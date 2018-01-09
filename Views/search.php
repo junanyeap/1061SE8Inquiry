@@ -5,6 +5,7 @@
     exit(0);
   }
   require("../Modules/Function.php");
+  require("../Modules/photoFunction.php");
   error_reporting(0);
   // $_SESSION["last_label"] = $label = $_REQUEST['label'];
   // $_SESSION["last_key"] = $keyword = $_REQUEST['keyword'];
@@ -46,8 +47,11 @@
         $results=searchEcology($keyword,$label,$family,$genus);
         while($rs=mysqli_fetch_array($results)) {
           echo "<div class='card card-inline col-md-3'>
-                  <div style='overflow:hidden;height:70%'>
-                  <img class='card-img-top' src='../Views/frog.jpg' style='width:100%'>
+                  <div style='overflow:hidden;height:200px;margin-top:auto'>";
+                  $cover=getCoverPhoto($rs['organismname']);
+                  $rss=mysqli_fetch_array($cover);
+                  echo "
+                  <img class='card-img-top' src='",$rss['path'],"' style='width:100%'>
                   </div>
                   <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
                   <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold;font-size:120%';>"
@@ -89,7 +93,7 @@
                 <td style="text-align:left"><input type="text" name="keyword" style="width:80%"/></td>
                 </tr>
                 <tr>';
-                
+
                 $sql = "SELECT DISTINCT family,label FROM library where label='$label'";
                 $result = mysqli_query($conn,$sql);
 
@@ -114,7 +118,7 @@
                   echo '<option value="',$row["genus"],'">',$row["genus"],'</option>';
                 }
                 ?>
-                <tr><th style="text-align:center", colspan="4"> 
+                <tr><th style="text-align:center", colspan="4">
                   <input class="btn-lg" type="submit" value="送出"></input>
                 </tr>
               </table>

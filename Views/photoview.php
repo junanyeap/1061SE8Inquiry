@@ -73,9 +73,9 @@
 		}
 	</style>
 
-    
+
   <div class="container">
-    
+
 <?php
   // require('../Modules/Function.php');
   require('../Modules/photoFunction.php');
