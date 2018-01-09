@@ -145,7 +145,7 @@ window.goTopMove = function () {
 var scrollH = $body.scrollTop(),
 winH = $win.height(),
 css = {"top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity};
-if(scrollH > 20) {
+if(scrollH > 500) {
 $button.css(css);
 $button.fadeIn("slow");
 } else {
