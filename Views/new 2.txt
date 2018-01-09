@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <title>TEST</title>
+    </head>
+    <!-- 因為置頂會把內容蓋住，所以必須在body設定padding-top的寬度-->
+    <!-- navbar-fixed-top預約會佔用50px的空間 -->
+    <body style="padding-top:70px;">    
+        <!-- Bootstrap需要使用jQuery，所以第一個引入 -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/onduty.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <!-- 巡覽置頂，會固到頂部 -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row" style="padding:0px">
+                    <a href="#" class="btn btn-default btn-lg btn-block" >
+                        頂部
+                    </a>
+                </div>
+            </div>
+        </nav>
+                
+        <div class="container-fluid">
+            <div class="row">
+                <p>話說一百八十年前， 
+                    比現在的武林更加混亂， 
+                    武林中人死傷無數， 
+                    永無寧日。此時有一位貌似書生的人， 
+                    約四大門派之主與劍尊在峰頂上談判， 
+                    談判經過了三天三夜， 
+                    四大門派之主與劍尊為了自己的權力， 
+                    圴不肯和解， 
+                    到了第四天，這名書生終於按奈不住， 
+                    說道：「難道只有武力才能解決嗎？」 
+                    ，眾人一致認同。只見書生運起內力， 
+                    雙手一揮，一套神功應然而出， 
+                    擊碎了兩百里外的峰頂，內力之強， 
+                    眾人目瞪口呆，無不訝異，
+                   同語「武林至尊在此」，於是同意和解， 
+                    換來百年的和平。</p>
+            </div>
+        </div>
+        
+        <!-- 巡覽置底 -->
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <div class="container">
+                <div class="row" >
+                <div class="col-xs-6" style="padding:0px" >
+                    <a href="#" class="btn btn-default btn-lg btn-block" >
+                        設定
+                    </a>
+                </div>
+                
+                <div class="col-xs-6" style="padding:0px">
+                    <a href="#" class="btn btn-default btn-lg btn-block">
+                        說明
+                    </a>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-xs-6" style="padding:0px" >
+                    <a href="#" class="btn btn-default btn-lg btn-block" >
+                        設定2
+                    </a>
+                </div>
+                
+                <div class="col-xs-6" style="padding:0px">
+                    <a href="#" class="btn btn-default btn-lg btn-block">
+                        說明2
+                    </a>
+                </div>
+            </div>
+            </div>
+        </nav>
+        
+    </body>
+</html>
