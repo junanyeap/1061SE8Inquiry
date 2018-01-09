@@ -47,11 +47,11 @@
         $results=searchEcology($keyword,$label,$family,$genus);
         while($rs=mysqli_fetch_array($results)) {
           echo "<div class='card card-inline col-md-3'>
-                  <div style='overflow:hidden;height:200px;margin-top:auto'>";
+                  <div style='overflow:hidden;height:150px;'>";
                   $cover=getCoverPhoto($rs['organismname']);
                   $rss=mysqli_fetch_array($cover);
                   echo "
-                  <img class='card-img-top' src='",$rss['path'],"' style='width:100%'>
+                  <img class='card-img-top' src='",$rss['path'],"' style='width:100%;margin-top:auto;margin-'>
                   </div>
                   <div class='card-footer text-center' type='button' style='background-color:#b8d199'>
                   <a href='searchDetail.php?&id=".$rs['id']."' class='btn btn-lg' style='color:black;font-weight:bold;font-size:120%';>"

@@ -44,7 +44,7 @@
             <link rel = "stylesheet" type = "text/css" href = "hk.css">
             <form action="search.php" method="post" style="font-size: 25px">
             <!-- <input type="hidden" name ="act" value ="searchEcology"> -->
-              <table class="table" >
+              <table class="table">
                 <tr><th style="text-align:center", colspan="4">查詢</th></tr>
                 <?php
                 $label=$_REQUEST['label'];

@@ -149,28 +149,8 @@ if ($rs=mysqli_fetch_assoc($result)) {
         </table>
       </div>
     </div>
-	<div style='overflow:hidden;height:70%'>
-        <img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
-		<img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
-		<img class='card-img-top' src='../Views/frog.jpg' style='width:33%'>
-	</div>
     <row>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
-        <img src="../Views/frog.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
-        <img src="../Views/frog2.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
-        <img src="../Views/frog.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
-        <img src="../Views/frog2.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3" style="height:300px;overflow:hidden">
+      <div class="col-md-3" style="height:150px;overflow:hidden">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
     </row>
