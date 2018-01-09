@@ -19,6 +19,7 @@ if ($rs=mysqli_fetch_assoc($result)) {
   $Habitat=$rs['habitat'];
   $Note=$rs['note'];
   $edit_id = $rs['id'];
+  $time=$rs['createtime'];
 } else {
   echo "Your id is wrong!!";
   exit(0);
@@ -143,6 +144,8 @@ if ($rs=mysqli_fetch_assoc($result)) {
           </tr><tr>
             <td class="col-md-2"><b>注意：</b></td><td><b><?php echo $Note;?></b></td>
           </tr><tr>
+            <td class="col-md-2"><b>創建時間：</b></td><td><b><?php echo $time;?></b></td>
+          </tr>
         </table>
       </div>
     </div>
