@@ -127,7 +127,7 @@
 //<![CDATA[
 (function () {
 $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端' height='50' width='50'/>");
-var img = "http://i01.pic.sogou.com/8db77379d8f47267",
+var img = "https://cdn.pixabay.com/photo/2013/03/29/13/39/up-97615_960_720.png",
 locatioin = 9/10, // 按鈕出現在螢幕的高度
 right = 10, // 距離右邊 px 值
 opacity = 1, // 透明度
