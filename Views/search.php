@@ -126,9 +126,9 @@
 <script>
 //<![CDATA[
 (function () {
-$("body").append("<img src='' id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端' height='30' width='30' />");
+$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端' height='50' width='80'/>");
 var img = "../Views/up.png",
-locatioin = 10/12, // 按鈕出現在螢幕的高度
+locatioin = 9/10, // 按鈕出現在螢幕的高度
 right = 10, // 距離右邊 px 值
 opacity = 1, // 透明度
 speed = 500, // 捲動速度
