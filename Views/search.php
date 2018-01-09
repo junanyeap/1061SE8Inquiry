@@ -130,7 +130,7 @@ $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor
 var img = "http://i01.pic.sogou.com/8db77379d8f47267",
 locatioin = 9/10, // 按鈕出現在螢幕的高度
 right = 10, // 距離右邊 px 值
-opacity = 0.3, // 透明度
+opacity = 1, // 透明度
 speed = 500, // 捲動速度
 $button = $("#goTopButton"),
 $body = $(document),
