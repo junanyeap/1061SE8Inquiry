@@ -130,7 +130,7 @@
 <script>
 //<![CDATA[
 (function () {
-$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端' height='50' width='80'/>");
+$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端' height='70' width='120'/>");
 var img = "../Views/up.png",
 locatioin = 9/10, // 按鈕出現在螢幕的高度
 right = 10, // 距離右邊 px 值
