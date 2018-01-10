@@ -150,29 +150,31 @@ $_SESSION['organ']=$Organ;
         </table>
       </div>
     </div>
-    <row>
+    <div class="row">
       <?php
       require('../Modules/photoFunction.php');
+
       $result=getPhotoWithStage1($_SESSION['organ']);
         while (	$rs=mysqli_fetch_array($result)) {
-          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+          echo '<b>幼年期:</b><br><div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%;display:inline">
             <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
           </div>';
         }
+        echo '<br><div class="row">';
       $result=getPhotoWithStage2($_SESSION['organ']);
         while (	$rs=mysqli_fetch_array($result)) {
-          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+          echo '<b>成長期:</b><br><div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
             <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
           </div>';
         }
+        echo '<br><div class="row">';
       $result=getPhotoWithStage3($_SESSION['organ']);
         while (	$rs=mysqli_fetch_array($result)) {
-          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+          echo '<b>成熟期:</b><br><div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
             <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
-          </div>';
+          </div><br>';
         }
       ?>
-    </row>
     <div id="myModal" class="modal">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01">
