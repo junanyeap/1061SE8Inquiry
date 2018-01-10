@@ -24,6 +24,7 @@ if ($rs=mysqli_fetch_assoc($result)) {
   echo "Your id is wrong!!";
   exit(0);
 }
+$_SESSION['organ']=$Organ;
 ?>
 <head>
   <meta charset="UTF-8" />
@@ -78,7 +79,7 @@ if ($rs=mysqli_fetch_assoc($result)) {
       }
 
       /* Add Animation */
-      .modal-content, #caption {    
+      .modal-content, #caption {
           -webkit-animation-name: zoom;
           -webkit-animation-duration: 0.6s;
           animation-name: zoom;
@@ -86,12 +87,12 @@ if ($rs=mysqli_fetch_assoc($result)) {
       }
 
       @-webkit-keyframes zoom {
-          from {-webkit-transform:scale(0)} 
+          from {-webkit-transform:scale(0)}
           to {-webkit-transform:scale(1)}
       }
 
       @keyframes zoom {
-          from {transform:scale(0)} 
+          from {transform:scale(0)}
           to {transform:scale(1)}
       }
 
@@ -150,30 +151,27 @@ if ($rs=mysqli_fetch_assoc($result)) {
       </div>
     </div>
     <row>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
-      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
-        <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
-      </div>
+      <?php
+      require('../Modules/photoFunction.php');
+      $result=getPhotoWithStage1($_SESSION['organ']);
+        while (	$rs=mysqli_fetch_array($result)) {
+          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+            <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
+          </div>';
+        }
+      $result=getPhotoWithStage2($_SESSION['organ']);
+        while (	$rs=mysqli_fetch_array($result)) {
+          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+            <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
+          </div>';
+        }
+      $result=getPhotoWithStage3($_SESSION['organ']);
+        while (	$rs=mysqli_fetch_array($result)) {
+          echo '<div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
+            <img src="',$rs['path'],'" style="width:100%" id="showimg"/>
+          </div>';
+        }
+      ?>
     </row>
     <div id="myModal" class="modal">
       <span class="close">&times;</span>
@@ -198,9 +196,8 @@ if ($rs=mysqli_fetch_assoc($result)) {
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
+    span.onclick = function() {
         modal.style.display = "none";
     }
   </script>
 </body>
-

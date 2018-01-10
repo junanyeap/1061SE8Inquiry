@@ -21,6 +21,11 @@
             }
           ?>
         </select>
+        <select name='state'>
+          <option value=‘1’>幼年</option>
+          <option value=‘2’>變態</option>
+          <option value=‘3’>成年</option>
+        </select>
         <!-- 使用 html 5 實現單一上傳框可多選檔案方式，須新增 multiple 元素 -->
         <input type="file" name="myFile[]" id="" accept="image/jpeg,image/jpg,image/gif,image/png" multiple>
 

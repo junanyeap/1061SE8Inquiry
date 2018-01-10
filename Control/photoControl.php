@@ -8,6 +8,7 @@
     // 封裝好的單一及多檔案上傳 class
     include_once '../Modules/Upload.php';
     $directory = $_REQUEST['directory'];
+    $state = $_REQUEST['state'];
     // 更新檔案請改為 Upload($directory, true, $id); 更新時只能用單一張照片
     $upload = new Upload($directory);
     $upload->callUploadFile();
