@@ -4,11 +4,26 @@
 
 /* READ */
     /* 獲取全部生態照片庫資訊 */
+    function getPhotoWithStage1($dir){
+      global $conn;
+      $sql="select * from photo where directory='$dir' and state=1";
+      return mysqli_query($conn,$sql);
+    }
+    function getPhotoWithStage2($dir){
+      global $conn;
+      $sql="select * from photo where directory='$dir' and state=2";
+      return mysqli_query($conn,$sql);
+    }
+    function getPhotoWithStage3($dir){
+      global $conn;
+      $sql="select * from photo where directory='$dir' and state=3";
+      return mysqli_query($conn,$sql);
+    }
     function getFullPhoto() {
         // 宣告使用conn全域變數
         global $conn;
         // 選取photo資料表中所有照片資訊
-        $sql = "SELECT * FROM `photo`";
+        $sql = "SELECT * FROM photo";
 
         return mysqli_query($conn, $sql);
     }
@@ -17,7 +32,7 @@
         // 宣告使用conn全域變數
         global $conn;
         // 選取photo資料表中所有照片資訊
-        $sql = "SELECT * FROM `photo` ORDER BY RAND() LIMIT 1";
+        $sql = "SELECT * FROM photo ORDER BY RAND() LIMIT 1";
 
         return mysqli_query($conn, $sql);
     }
@@ -30,7 +45,7 @@
             $directory = "%" . mysqli_real_escape_string($conn, $directory) . "%";
         }
         // 選取photo資料表中所有照片資訊
-        $sql = "SELECT * FROM `photo` WHERE (`directory` LIKE '$directory' OR `directory` IS NULL) ORDER BY RAND() LIMIT 1";
+        $sql = "SELECT * FROM photo WHERE (directory LIKE '$directory' OR directory IS NULL) ORDER BY RAND() LIMIT 1";
 
         return mysqli_query($conn, $sql);
     }
@@ -42,7 +57,7 @@
         // 針對id做基本檢誤
         $id = (int)$id;
         // 選取photo資料表指定編號生態照片資訊
-        $sql = "SELECT * FROM `photo` WHERE `id` = '$id'";
+        $sql = "SELECT * FROM photo WHERE id = '$id'";
 
         return mysqli_query($conn, $sql);
     }
@@ -52,7 +67,7 @@
         // 針對id做基本檢誤
         $organismname = $organismname;
         // 選取photo資料表指定編號生態照片資訊
-        $sql = "SELECT * FROM `photo` WHERE `directory` = '$organismname'";
+        $sql = "SELECT * FROM photo WHERE directory = '$organismname'";
 
         return mysqli_query($conn, $sql);
     }
@@ -64,7 +79,7 @@
         // 字串過濾
         $directory = mysqli_real_escape_string($conn, $directory);
         // 選取photo資料表中所有照片資訊
-        $sql = "SELECT * FROM `photo` WHERE `directory` = '$directory'";
+        $sql = "SELECT * FROM photo WHERE directory = '$directory'";
 
         return mysqli_query($conn, $sql);
     }
@@ -74,7 +89,7 @@
         // 宣告使用conn全域變數
         global $conn;
         // 選取並用標籤進行分群
-        $sql = "SELECT `directory` FROM `photo` GROUP BY `directory`";
+        $sql = "SELECT directory FROM photo GROUP BY directory";
 
         return mysqli_query($conn, $sql);
     }
@@ -89,7 +104,7 @@
         if($name != "%") {
             $name = "%" . mysqli_real_escape_string($conn, $name) . "%";
         }
-        $sql = "SELECT * FROM `photo` WHERE (`directory` LIKE '$directory' OR `directory` IS NULL) AND `name` LIKE '$name'";
+        $sql = "SELECT * FROM photo WHERE (directory LIKE '$directory' OR directory IS NULL) AND name LIKE '$name'";
 
         return mysqli_query($conn, $sql);
     }
@@ -108,7 +123,7 @@
             $latitude = htmlspecialchars(mysqli_real_escape_string($conn, $latitude));
             $shootdatetime = htmlspecialchars(mysqli_real_escape_string($conn, $shootdatetime));
             // 新增資料
-            $sql = "UPDATE `photo` SET `longitude` = '$longitude', `latitude` = '$latitude', `shootdatetime` = '$shootdatetime'  WHERE `id` = '$id'";
+            $sql = "UPDATE photo SET longitude = '$longitude', latitude = '$latitude', shootdatetime = '$shootdatetime'  WHERE id = '$id'";
 
             return mysqli_query($conn, $sql);
         }
@@ -120,7 +135,7 @@
         // 針對id做基本檢誤
         $id = (int)$id;
         // 刪除這一筆id的所有資料
-        $sql = "DELETE FROM `photo` WHERE `id` = $id;";
+        $sql = "DELETE FROM photo WHERE id = $id;";
         // 執行SQL
         return mysqli_query($conn, $sql);
     }
