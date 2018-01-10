@@ -150,28 +150,28 @@ if ($rs=mysqli_fetch_assoc($result)) {
       </div>
     </div>
     <row>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
-      <div class="col-md-3" style="height:150px;overflow:hidden">
+      <div class="col-md-3 " style="height:150px;overflow:hidden;margin-top:2%">
         <img src="../Views/frog3.jpg" style="width:100%" id="showimg"/>
       </div>
     </row>
